@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Exercicio09 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int a[], b[], c[];
+        int contA, contB, contC, s;
+
+        a = new int[10];
+        b = new int[10];
+        c = new int[10];
+
+        contC = 0;
+
+        for (contA = 0; contA < 10; contA++) {
+            s = contA + 1;
+
+            System.out.println("Digite o " + s + "° valor do vetor A");
+            a[contA] = in.nextInt();
+
+            System.out.println("Digite o " + s + "° valor do vetor B");
+            b[contA] = in.nextInt();
+
+            System.out.println(" ");
+        }
+
+        for(contA = 0; contA < 10; contA++) {
+            for(contB = 0; contB < 10; contB++) {
+                if(a[contA] == b[contB]) {
+                    c[contC] = a[contA];
+                    contC++;  
+                    contB = 10;   
+                }
+            }
+        }
+
+        // Exibir C
+        System.out.println("\nVetor C (Interseção)");
+
+        if (contC == 0) {
+            System.out.println("Nenhum elemento em comum encontrado");
+        } else {
+            for (contA = 0; contA < contC; contA++) {
+                s = contA + 1;
+                System.out.println("O valor do " + s + "º elemento do vetor C é: " + c[contA]);
+            }
+        }
+
+        in.close();
+    }
+}
